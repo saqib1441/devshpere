@@ -6,7 +6,6 @@ import { PricingPlan, ServicesData, Service } from "@/lib/data";
 import PageHeader from "@/components/PageHeader";
 import PricingCard from "@/components/PricingCard";
 import PortfolioSwiper from "@/components/PortfolioSwiper";
-import NotFound from "@/app/not-found";
 import Link from "next/link";
 import Testimonial from "@/components/Testimonial";
 import Quote from "@/components/Quote";
