@@ -44,7 +44,7 @@ const Clients: FC = () => {
                     src={client} // Client logo
                     alt={`Client logo of ${client}`} // More accessible alt text with client name
                     priority // Prioritize loading the image
-                    className="mx-auto w-[150px] dark:bg-white rounded-md h-auto" // Center image inside the swiper slide
+                    className="mx-auto w-[150px] dark:bg-white rounded-md h-auto select-none" // Center image inside the swiper slide
                   />
                 </SwiperSlide>
               );
