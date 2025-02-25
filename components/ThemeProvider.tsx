@@ -13,7 +13,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   if (!mounted) return <></>;
 
   return (
-    <NextThemesProvider attribute="class" defaultTheme="system">
+    <NextThemesProvider attribute="class" defaultTheme="light">
       {children}
     </NextThemesProvider>
   );
