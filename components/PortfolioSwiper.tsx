@@ -18,7 +18,6 @@ const PortfolioSwiper: FC<PortfolioInterface> = ({
   imgSrc,
   link,
   portfolio,
-  portfolioDesc,
 }) => {
   return (
     <Swiper
