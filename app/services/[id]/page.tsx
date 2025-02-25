@@ -77,7 +77,7 @@ const SingleService: FC = () => {
                 Choose a plan that fits your needs and budget.
               </p>
             </div>
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 my-10">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 my-10 items-start">
               {service.pricing.map((pricing: PricingPlan, index: number) => (
                 <PricingCard
                   key={index}

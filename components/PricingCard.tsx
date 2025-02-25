@@ -22,8 +22,8 @@ const PricingCard: FC<PricingPlan> = ({
       </h1>
       <div className="space-y-3 w-full">
         {features.map((feature, index) => (
-          <div key={index} className="flex items-center gap-2">
-            <div className="border-primary border text-primary rounded-full p-1 text-sm">
+          <div key={index} className="flex items-center gap-2 text-sm">
+            <div className="text-primary text-sm">
               <FaCheck />
             </div>
             <p className="text-black/70 dark:text-white/70">{feature}</p>
