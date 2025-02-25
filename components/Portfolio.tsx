@@ -14,12 +14,12 @@ interface CounterDataInterface {
 const Portfolio: FC = () => {
   const counterData: CounterDataInterface[] = [
     {
-      end: 20,
+      end: 100,
       suffex: "+",
       description: "Projects Done",
     },
     {
-      end: 6,
+      end: 90,
       suffex: "+",
       description: "Happy Clients",
     },
@@ -30,7 +30,7 @@ const Portfolio: FC = () => {
         {/* Image Section */}
         <div className="flex justify-center lg:w-1/2">
           <Image
-            src={PortfolioImg}
+            src={PortfolioImg || ""}
             alt="dev-sphere-portfolio-image"
             priority
             className="sm:w-[500px] mx-auto md:w-[550px] xl:w-[600px]"

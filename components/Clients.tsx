@@ -10,14 +10,14 @@ import { ClientData } from "@/lib/data";
 const Clients: FC = () => {
   return (
     <main className="container">
-      <div className="shadow-mainShadow py-20 rounded-2xl text-center bg-white dark:bg-background">
+      <div className="shadow-mainShadow py-20 rounded-2xl text-center bg-white dark:bg-secondary/70 dark:border dark:shadow-none">
         {/* Section title */}
         <h1 className="font-nunito text-3xl font-black text-black/90 dark:text-white/90">
           Join Our Happy Customers
         </h1>
 
         {/* Swiper carousel container */}
-        <div className="mt-6 px-5">
+        <div className="mt-10 px-5">
           <Swiper
             modules={[Autoplay]} // Swiper modules (Autoplay here)
             autoplay={{ delay: 2000, pauseOnMouseEnter: true }} // Autoplay settings
@@ -29,7 +29,7 @@ const Clients: FC = () => {
               400: { slidesPerView: 2 },
               700: { slidesPerView: 3 },
               1024: { slidesPerView: 4 },
-              1280: { slidesPerView: 5 },
+              1280: { slidesPerView: 4 },
             }}
             aria-label="Client Logos Carousel" // Accessibility improvement: label for screen readers
           >
@@ -44,7 +44,7 @@ const Clients: FC = () => {
                     src={client} // Client logo
                     alt={`Client logo of ${client}`} // More accessible alt text with client name
                     priority // Prioritize loading the image
-                    className="mx-auto" // Center image inside the swiper slide
+                    className="mx-auto w-[150px] dark:bg-white rounded-md h-auto" // Center image inside the swiper slide
                   />
                 </SwiperSlide>
               );

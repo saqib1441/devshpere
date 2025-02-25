@@ -11,8 +11,8 @@ interface IServiceCard {
 
 const ServiceCard: FC<IServiceCard> = ({ icon, title, description, link }) => {
   return (
-    <div className="shadow-mainShadow rounded-2xl p-6">
-      <div className="size-16 flex items-center justify-center rounded-full bg-primary/5 dark:bg-white/5 text-3xl text-primary hover:bg-primary/10 dark:hover:bg-white/10 transition-all duration-300">
+    <div className="shadow-mainShadow dark:shadow-none rounded-2xl p-6 dark:bg-secondary/70">
+      <div className="size-16 flex items-center justify-center rounded-full bg-primary/5 dark:bg-background/70 text-3xl text-primary hover:bg-primary/10 dark:hover:bg-background cursor-pointer transition-all duration-300">
         {icon}
       </div>
       <h1 className="text-lg font-black font-nunito text-black/90 dark:text-white/90 my-2">

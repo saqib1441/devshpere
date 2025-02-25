@@ -35,7 +35,7 @@ const About: FC = () => {
           </p>
 
           {/* Service List */}
-          <div className="mb-4 grid gap-2">
+          <div className="mb-5 grid gap-2">
             {AboutData.map((about, index) => (
               <div key={index} className="flex items-center gap-3">
                 <div className="text-primary">{about.icon}</div>

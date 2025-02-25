@@ -50,7 +50,7 @@ const Quote: FC = () => {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="mt-10 flex flex-col gap-10 sm:items-center md:w-[650px] lg:w-[750px] md:mx-auto sm:py-16 sm:px-10 p-5 rounded-2xl shadow-mainShadow"
+          className="mt-10 flex flex-col gap-10 sm:items-center md:w-[650px] lg:w-[750px] md:mx-auto sm:py-16 sm:px-10 p-5 rounded-2xl shadow-mainShadow dark:shadow-none dark:bg-secondary/70"
         >
           <div className="grid gap-5 sm:grid-cols-2 sm:w-full">
             <div className="flex flex-col gap-2">

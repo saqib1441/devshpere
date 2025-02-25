@@ -24,7 +24,7 @@ const ContactPage: FC = () => {
       {/* Contact Content */}
       <div className="container mb-20 flex flex-col gap-10 lg:flex-row items-start">
         {/* Contact Information */}
-        <div className="lg:w-1/2 shadow-mainShadow rounded-2xl p-5 sm:p-10 sm:flex sm:flex-col sm:items-center sm:text-center lg:text-start lg:items-start">
+        <div className="lg:w-1/2 shadow-mainShadow rounded-2xl p-5 sm:p-10 sm:flex sm:flex-col sm:items-center sm:text-center lg:text-start lg:items-start dark:shadow-none dark:bg-secondary/70">
           <p className="text-primary mb-2">Get in touch</p>
           <h1 className="text-3xl font-black font-nunito mb-2 text-black/90 dark:text-white/90 sm:w-[400px]">
             Your Next Big Idea Starts with a Conversation!
@@ -42,7 +42,7 @@ const ContactPage: FC = () => {
             {ContactPageData.map((contact, index) => (
               <div
                 key={index}
-                className="flex gap-4 bg-primary text-white items-center px-4 rounded-md py-3"
+                className="flex gap-5 bg-primary dark:bg-background/50 text-white items-center px-5 rounded-md py-3"
               >
                 <div className="text-2xl">{contact.icon}</div>
                 <div className="flex flex-col">
@@ -69,7 +69,7 @@ const ContactPage: FC = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="lg:w-1/2 shadow-mainShadow rounded-2xl p-5 sm:p-10">
+        <div className="lg:w-1/2 shadow-mainShadow dark:shadow-none dark:bg-secondary/70 rounded-2xl p-5 sm:p-10">
           <h1 className="text-3xl font-black font-nunito mb-2 text-black/90 dark:text-white/90">
             Let&#39;s talk!
           </h1>
@@ -82,7 +82,7 @@ const ContactPage: FC = () => {
 
           {/* Form */}
           <form className="mt-10">
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
               <div className="grid gap-2">
                 <Label htmlFor="name">Name</Label>
                 <Input id="name" placeholder="Name" />

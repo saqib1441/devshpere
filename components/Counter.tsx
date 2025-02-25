@@ -20,14 +20,14 @@ const Counter: FC<ICounterProps> = ({
   description,
 }) => {
   return (
-    <div className="shadow-mainShadow text-center p-5 rounded-2xl bg-white dark:bg-gray-800">
+    <div className="shadow-mainShadow text-center p-5 rounded-2xl bg-white dark:bg-secondary dark:shadow-none">
       {/* CountUp component used to animate the number change */}
       <CountUp
         start={start}
         end={end}
         prefix={prefix}
         suffix={suffix}
-        duration={2.5} // Adding duration to control animation speed
+        duration={5} // Adding duration to control animation speed
         className="text-3xl text-primary font-nunito font-black"
         aria-live="polite" // Ensure screen readers announce the number changes
       />

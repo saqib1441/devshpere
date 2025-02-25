@@ -14,9 +14,11 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import Logo from "./Logo";
 import ThemeButton from "./ThemeButton";
 import { navLinks } from "@/lib/data";
+import { usePathname } from "next/navigation";
 
 const Navbar: FC = () => {
   const nav = useRef<HTMLDivElement | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -35,7 +37,7 @@ const Navbar: FC = () => {
 
   return (
     <nav
-      className="shadow dark:shadow-white/5 bg-white/30 dark:bg-background/5 backdrop-blur-md w-full z-50"
+      className="shadow dark:shadow-white/5 bg-white/30 dark:bg-secondary/30 backdrop-blur-md w-full z-50"
       ref={nav}
     >
       <div className="container flex items-center py-5 justify-between">
@@ -48,7 +50,9 @@ const Navbar: FC = () => {
             <Link
               href={path}
               key={index}
-              className="hover:text-primary transition-all duration-300"
+              className={`${
+                pathname === path && "text-primary"
+              } hover:text-primary transition-all duration-300`}
             >
               {name}
             </Link>

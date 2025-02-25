@@ -19,8 +19,6 @@ const Logo: FC = () => {
         alt="Dev Sphere logo"
         priority
         className="w-[150px] lg:w-[200px]"
-        width={200} // Adjusting for optimization (tailored for image size)
-        height={50} // Matching the aspect ratio for better rendering
       />
     </div>
   );

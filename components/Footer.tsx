@@ -31,12 +31,42 @@ const Footer: FC = () => {
             Services
           </h1>
           <div className="flex flex-col gap-3 text-black/70 dark:text-white/70">
-            <Link href="/">Graphic Designing</Link>
-            <Link href="/">UI/UX Designing</Link>
-            <Link href="/">Web Development</Link>
-            <Link href="/">App Development</Link>
-            <Link href="/">Digital Marketing</Link>
-            <Link href="/">SEO</Link>
+            <Link
+              href="/"
+              className="hover:text-primary transition-all duration-300"
+            >
+              Graphic Designing
+            </Link>
+            <Link
+              href="/"
+              className="hover:text-primary transition-all duration-300"
+            >
+              UI/UX Designing
+            </Link>
+            <Link
+              href="/"
+              className="hover:text-primary transition-all duration-300"
+            >
+              Web Development
+            </Link>
+            <Link
+              href="/"
+              className="hover:text-primary transition-all duration-300"
+            >
+              App Development
+            </Link>
+            <Link
+              href="/"
+              className="hover:text-primary transition-all duration-300"
+            >
+              Digital Marketing
+            </Link>
+            <Link
+              href="/"
+              className="hover:text-primary transition-all duration-300"
+            >
+              SEO
+            </Link>
           </div>
         </div>
 
@@ -46,10 +76,30 @@ const Footer: FC = () => {
             Useful Links
           </h1>
           <div className="flex flex-col gap-3 text-black/70 dark:text-white/70">
-            <Link href="/">Home</Link>
-            <Link href="/">About</Link>
-            <Link href="/">Services</Link>
-            <Link href="/">Contact Us</Link>
+            <Link
+              href="/"
+              className="hover:text-primary transition-all duration-300"
+            >
+              Home
+            </Link>
+            <Link
+              href="/"
+              className="hover:text-primary transition-all duration-300"
+            >
+              About
+            </Link>
+            <Link
+              href="/"
+              className="hover:text-primary transition-all duration-300"
+            >
+              Services
+            </Link>
+            <Link
+              href="/"
+              className="hover:text-primary transition-all duration-300"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
 
@@ -59,8 +109,16 @@ const Footer: FC = () => {
             Contact Us
           </h1>
           <div className="flex flex-col gap-3 text-black/70 dark:text-white/70">
-            <Link href="tel:+923467890654">+92 346 7890654</Link>
-            <Link href="mailto:devsphereofficial@gmail.com">
+            <Link
+              href="tel:+923467890654"
+              className="hover:text-primary transition-all duration-300"
+            >
+              +92 346 7890654
+            </Link>
+            <Link
+              href="mailto:devsphereofficial@gmail.com"
+              className="hover:text-primary transition-all duration-300"
+            >
               devsphereofficial@gmail.com
             </Link>
           </div>

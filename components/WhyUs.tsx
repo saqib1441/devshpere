@@ -21,13 +21,13 @@ const WhyUs = () => {
           </Link>
         </div>
 
-        <div className="grid gap-5 lg:w-[50%] md:w-[600px] md:mx-auto lg:mx-0">
+        <div className="grid gap-5 lg:w-[50%] md:w-[600px] md:mx-auto lg:mx-0 mt-10 lg:mt-0">
           {WhyUsData.map((data, index) => (
             <div
               key={index}
-              className="flex gap-3 p-5 shadow-mainShadow rounded-2xl flex-col sm:flex-row sm:items-center"
+              className="flex gap-3 p-5 shadow-mainShadow dark:shadow-none dark:bg-secondary/70 rounded-2xl flex-col sm:flex-row sm:items-center"
             >
-              <div className="text-primary w-20 bg-primary/5 dark:bg-white/5 h-16 rounded-2xl flex items-center justify-center text-3xl sm:w-28 sm:h-full">
+              <div className="text-primary w-20 bg-primary/5 dark:bg-background h-16 rounded-2xl flex items-center justify-center text-3xl sm:w-28 sm:h-full">
                 {data.icon}
               </div>
               <div className="w-full">

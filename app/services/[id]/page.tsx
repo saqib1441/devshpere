@@ -52,14 +52,14 @@ const SingleService: FC = () => {
               {service.description}
             </p>
           </div>
-          <div className="flex flex-col gap-3 shadow-mainShadow p-7 rounded-2xl w-[30%]">
+          <div className="flex flex-col gap-3 shadow-mainShadow p-7 rounded-2xl w-[30%] dark:shadow-none dark:bg-secondary/70">
             <h1 className="text-xl font-nunito font-black">More Services</h1>
             <div className="w-full flex flex-col gap-2">
               {otherServices?.map(({ id, name }, index) => (
                 <Link
                   href={`/services/${id}`}
                   key={index}
-                  className="text-gray-600 dark:text-gray-400 border-b last:border-none pb-1 hover:text-primary transition-all duration-300"
+                  className="text-gray-600 dark:text-gray-400 border-b last:border-none pb-1 hover:text-primary transition-all duration-300 dark:border-white/10"
                 >
                   - {name}
                 </Link>
@@ -103,7 +103,12 @@ const SingleService: FC = () => {
                 showcase my creativity and expertise.
               </p>
             </div>
-            <PortfolioSwiper imgSrc={service.portfolio} link="#" />
+            <PortfolioSwiper
+              imgSrc={service.portfolio}
+              link="#"
+              portfolio={service.name}
+              portfolioDesc={service.portfolioDesc}
+            />
           </div>
         )}
       </section>

@@ -15,7 +15,7 @@ const Header: FC = () => {
           </p>
           <h1
             id="header-section"
-            className="font-nunito text-3xl font-black text-black/80 mb-4 sm:text-4xl xl:text-5xl dark:text-white/90 sm:w-[500px]"
+            className="font-nunito text-3xl font-black text-black/80 mb-4 sm:text-4xl xl:text-5xl dark:text-white/90 sm:w-[500px] sm:leading-11 xl:leading-14"
           >
             Launch Faster with <span className="text-primary">Dev</span>Sphere
             as Your Co-Pilot
