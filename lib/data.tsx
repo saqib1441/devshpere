@@ -2,7 +2,6 @@ import { ReactElement } from "react";
 import { StaticImageData } from "next/image";
 import {
   FaCheck,
-  FaArrowUpWideShort,
   FaChartBar,
   FaImage,
   FaLaptopCode,
