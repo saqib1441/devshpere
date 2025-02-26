@@ -70,6 +70,18 @@ import WordpressImg6 from "@/assets/portfolio/wordpress/wordpress-6.png";
 // Video Editing
 import VideoEditing from "@/assets/portfolio/video-editing.png";
 
+// Header Images
+import Graphics from "@/assets/header/graphic-designing.png";
+import UI from "@/assets/header/ui-ux.png";
+import Web from "@/assets/header/web-development.png";
+import App from "@/assets/header/app-development.png";
+import Wordpress from "@/assets/header/wordpress.png";
+import Marketing from "@/assets/header/digital-marketing.png";
+import Editing from "@/assets/header/video-editing.png";
+
+// Teams Image
+import AhmadAli from "@/assets/team/ahmad-ali.jpg";
+
 // Interfaces
 type Navlinks = {
   name: string;
@@ -92,6 +104,7 @@ export type Service = {
   pricing: PricingPlan[];
   portfolio?: (StaticImageData | string)[];
   portfolioDesc: string;
+  thumbnail: StaticImageData | string;
 };
 
 type Testimonial = {
@@ -112,6 +125,16 @@ type ContactInfo = {
   description: string;
 };
 
+export type TeamInterface = {
+  imgSrc: StaticImageData | string;
+  name: string;
+  position: string;
+  socialLinks: {
+    icon: ReactElement;
+    url: string;
+  }[];
+};
+
 // Data
 export const navLinks: readonly Navlinks[] = [
   {
@@ -129,6 +152,10 @@ export const navLinks: readonly Navlinks[] = [
   {
     name: "Portfolio",
     path: "/portfolio",
+  },
+  {
+    name: "Team",
+    path: "/team",
   },
 ];
 
@@ -170,7 +197,7 @@ export const TestimonialData: readonly Testimonial[] = [
     text: "Dev Sphere's graphic design work is outstanding! Their creativity and attention to detail brought our brand to life with stunning visuals. Highly professional and truly exceptional—highly recommended!",
   },
   {
-    name: "The ACE Solution",
+    name: "The ACE Solutions",
     service: "Web Development",
     text: "Dev Sphere's web development team impressed us with their efficiency and expertise. They built a seamless, high-performing website that enhanced our online presence. Great collaboration and outstanding results!",
   },
@@ -257,40 +284,43 @@ export const ServicesData: readonly Service[] = [
         title: "Starter",
         description: "Check out our starup plan",
         features: [
-          "Logo Design (1 Concept)",
+          "Logo Design (2 Concepts)",
           "Business Card Design",
-          "Social Media Post (5 Designs)",
-          "Basic Flyer/Brochur (Single Page)",
+          "Social Media Post (5 Posts)",
+          "Basic Flyer or Brochure Design",
+          "Color Palette & Font Selection",
+          "High-Resolution Files (PNG, JPG)",
           "2 Revisions",
         ],
-        price: 5000,
+        price: 8000,
       },
       {
         title: "Basic",
         description: "Check out our premium plan",
         features: [
-          "Logo Design (2 Concepts)",
-          "Business Card & Letterhead Design",
-          "Social Media Posts (10 Designs)",
-          "Flyer/Brochure (Up to 2 Pages)",
-          "Infographic Design",
-          "3 Revisions",
+          "Logo Design (4 Concepts)",
+          "Complete Branding Kit (Logo, Colors, Fonts)",
+          "Social Media Kit (10 Posts + Banners)",
+          "Business Card, Letterhead & Envelope",
+          "Brochure / Flyer Design",
+          "Editable Source Files (AI, PSD, SVG)",
+          "4 Revisions",
         ],
-        price: 10000,
+        price: 15000,
       },
       {
         title: "Premium",
         description: "Check out our basic plan",
         features: [
-          "Logo Design (3 Concepts + Branding Guide)",
-          "Business Card, Letterhead & Envelope Design",
-          "Social Media Posts (20 Designs)",
-          "Flyer/Brochure (Up to 4 Pages)",
-          "Infographic & Presentation Slide Deck",
-          "Web Banner & Ad Design",
+          "Custom Logo Design (6 Concepts)",
+          "Complete Brand Identity Design",
+          "Social Media Management Templates (20+ Posts)",
+          "Business Card, Letterhead, Envelope, Presentation Slides",
+          "Brochure, Flyer, and Poster Design",
+          "Custom Illustrations & Infographics",
           "Unlimited Revisions",
         ],
-        price: 20000,
+        price: 40000,
       },
     ],
     portfolioDesc:
@@ -302,6 +332,7 @@ export const ServicesData: readonly Service[] = [
       GraphicsImg4,
       GraphicsImg5,
     ],
+    thumbnail: Graphics,
   },
   {
     id: 2,
@@ -316,11 +347,12 @@ export const ServicesData: readonly Service[] = [
         title: "Starter",
         description: "Check out our starup plan",
         features: [
-          "1-10 Screens (Mobile or Web)",
-          "Wireframing & Basic UI Design",
-          "User-Friendly Layouts",
-          "2 Revisions",
-          "Delivery in Figma/XD",
+          "Wireframing (Low-Fidelity)",
+          "1 Website or App Page Design",
+          "Basic Color Palette & Typography",
+          "User Flow Mapping",
+          "Responsive Design (Mobile & Desktop)",
+          "Up to 2 Revisions",
         ],
         price: 10000,
       },
@@ -328,12 +360,13 @@ export const ServicesData: readonly Service[] = [
         title: "Basic",
         description: "Check out our premium plan",
         features: [
-          "10-20 Screens (Mobile or Web)",
-          "Wireframing & UI Design",
-          "Basic Prototyping",
-          "Responsive Design",
-          "3 Revisions",
-          "Source Files Included (Figma/XD)",
+          "Wireframing (Medium-Fidelity)",
+          "5 Website or App Pages Design",
+          "Branding Integration (Colors, Fonts, Icons)",
+          "Interactive Prototype (Figma/Adobe XD)",
+          "User Experience Optimization",
+          "Responsive Design for All Devices",
+          "Up to 4 Revisions",
         ],
         price: 15000,
       },
@@ -341,13 +374,13 @@ export const ServicesData: readonly Service[] = [
         title: "Premium",
         description: "Check out our basic plan",
         features: [
-          "15-30 Screens (Mobile or Web)",
-          "Full UI/UX Design Process (Research, Wireframes & Final UI)",
-          "Interactive Prototype",
-          "UX Audit & User Flow Design",
-          "Responsive & Dark Mode Design",
+          "Wireframing & Prototyping (High-Fidelity)",
+          "Complete Website or Mobile App UI Design",
+          "Advanced UX Research & Usability Testing",
+          "Custom Illustrations & Icons",
+          "Micro-Interactions & Animations",
+          "Full Design System & Component Library",
           "Unlimited Revisions",
-          "Delivery in Figma/XD with Assets & Style Guide",
         ],
         price: 25000,
       },
@@ -355,6 +388,7 @@ export const ServicesData: readonly Service[] = [
     portfolio: [UI1, UI2, UI3, UI4, UI5, UI6, UI7],
     portfolioDesc:
       "Creative visuals that enhance user experience. Explore my UI/UX portfolio, where design, functionality, and innovation come together for seamless interactions.",
+    thumbnail: UI,
   },
   {
     id: 3,
@@ -369,45 +403,50 @@ export const ServicesData: readonly Service[] = [
         title: "Starter",
         description: "Check out our starup plan",
         features: [
-          "1-10 Screens (Mobile or Web)",
-          "Wireframing & Basic UI Design",
-          "User-Friendly Layouts",
-          "2 Revisions",
-          "Delivery in Figma/XD",
+          "Single Page Application (SPA)",
+          "React.js/Next.js Frontend",
+          "Express.js & Node.js Backend",
+          "MongoDB Database",
+          "Responsive UI",
+          "Basic Contact Form",
+          "15 Days Free Support",
         ],
-        price: 10000,
+        price: 30000,
       },
       {
         title: "Basic",
         description: "Check out our premium plan",
         features: [
-          "10-20 Screens (Mobile or Web)",
-          "Wireframing & UI Design",
-          "Basic Prototyping",
-          "Responsive Design",
-          "3 Revisions",
-          "Source Files Included (Figma/XD)",
+          "Multi-Page Dynamic Website",
+          "User Authentication (JWT)",
+          "Admin Dashboard",
+          "REST API Integration",
+          "MongoDB Database",
+          "React with Tailwind",
+          "SEO Optimization",
+          "2 Months Free Support",
         ],
-        price: 15000,
+        price: 80000,
       },
       {
         title: "Premium",
         description: "Check out our basic plan",
         features: [
-          "15-30 Screens (Mobile or Web)",
-          "Full UI/UX Design Process (Research, Wireframes & Final UI)",
-          "Interactive Prototype",
-          "UX Audit & User Flow Design",
-          "Responsive & Dark Mode Design",
-          "Unlimited Revisions",
-          "Delivery in Figma/XD with Assets & Style Guide",
+          "Full-Scale Web Application",
+          "Redux/Zustand State Management",
+          "Role-Based Authentication",
+          "Payment Gateway Integration",
+          "Advanced API Security",
+          "Performance Optimized & Scalable",
+          "5 Months Free Support",
         ],
-        price: 25000,
+        price: 150000,
       },
     ],
     portfolio: [Web1, Web2, Web3, Web4, Web5],
     portfolioDesc:
       "Creative visuals that bring ideas to life. Explore my web development portfolio, where design, performance, and innovation come together for seamless experiences.",
+    thumbnail: Web,
   },
   {
     id: 4,
@@ -422,45 +461,50 @@ export const ServicesData: readonly Service[] = [
         title: "Starter",
         description: "Check out our starup plan",
         features: [
-          "1-10 Screens (Mobile or Web)",
-          "Wireframing & Basic UI Design",
-          "User-Friendly Layouts",
-          "2 Revisions",
-          "Delivery in Figma/XD",
+          "Simple Mobile App (Android & iOS)",
+          "3-5 Screens",
+          "Basic UI/UX Design",
+          "No Backend (Static Data)",
+          "Basic Navigation & Forms",
+          "1 Month Free Support",
         ],
-        price: 10000,
+        price: 40000,
       },
       {
         title: "Basic",
         description: "Check out our premium plan",
         features: [
-          "10-20 Screens (Mobile or Web)",
-          "Wireframing & UI Design",
-          "Basic Prototyping",
-          "Responsive Design",
-          "3 Revisions",
-          "Source Files Included (Figma/XD)",
+          "Dynamic Mobile App (Android & iOS)",
+          "5-10 Screens",
+          "User Authentication",
+          "REST API Integration",
+          "Backend Integration",
+          "Push Notifications",
+          "Basic Admin Panel",
+          "3 Months Free Support",
         ],
-        price: 15000,
+        price: 80000,
       },
       {
         title: "Premium",
         description: "Check out our basic plan",
         features: [
-          "15-30 Screens (Mobile or Web)",
-          "Full UI/UX Design Process (Research, Wireframes & Final UI)",
-          "Interactive Prototype",
-          "UX Audit & User Flow Design",
-          "Responsive & Dark Mode Design",
-          "Unlimited Revisions",
-          "Delivery in Figma/XD with Assets & Style Guide",
+          "Full-Scale Mobile App (Android & iOS)",
+          "10+ Screens",
+          "Real-Time Features (Chat, Live Updates)",
+          "Payment Gateway Integration",
+          "Advanced API Security",
+          "Performance Optimization",
+          "Scalable Backend (Node.js/Django)",
+          "6 Months Free Support",
         ],
-        price: 25000,
+        price: 150000,
       },
     ],
     portfolio: [UI6, UI1, UI2, UI3, UI4, UI5, UI7],
     portfolioDesc:
       "Creative visuals that power digital experiences. Explore my app development portfolio, where design, performance, and innovation come together for seamless usability.",
+    thumbnail: App,
   },
   {
     id: 5,
@@ -475,45 +519,50 @@ export const ServicesData: readonly Service[] = [
         title: "Starter",
         description: "Check out our starup plan",
         features: [
-          "1-10 Screens (Mobile or Web)",
-          "Wireframing & Basic UI Design",
-          "User-Friendly Layouts",
-          "2 Revisions",
-          "Delivery in Figma/XD",
+          "Basic On-Page SEO",
+          "Keyword Research (10 Keywords)",
+          "Meta Tags Optimization",
+          "Social Media Setup (FB, IG, Twitter)",
+          "10 Social Media Posts",
+          "Monthly Performance Report",
         ],
-        price: 10000,
+        price: 20000,
       },
       {
         title: "Basic",
         description: "Check out our premium plan",
         features: [
-          "10-20 Screens (Mobile or Web)",
-          "Wireframing & UI Design",
-          "Basic Prototyping",
-          "Responsive Design",
-          "3 Revisions",
-          "Source Files Included (Figma/XD)",
+          "Advanced On-Page & Technical SEO",
+          "Keyword Research (30 Keywords)",
+          "Backlink Strategy (50 Links)",
+          "Social Media Management (FB, IG, LinkedIn)",
+          "20 Social Media Posts",
+          "Google Ads (Rs. 20,000 Budget)",
+          "Bi-Weekly Performance Report",
         ],
-        price: 15000,
+        price: 40000,
       },
       {
         title: "Premium",
         description: "Check out our basic plan",
         features: [
-          "15-30 Screens (Mobile or Web)",
-          "Full UI/UX Design Process (Research, Wireframes & Final UI)",
-          "Interactive Prototype",
-          "UX Audit & User Flow Design",
-          "Responsive & Dark Mode Design",
-          "Unlimited Revisions",
-          "Delivery in Figma/XD with Assets & Style Guide",
+          "Full Digital Marketing & SEO",
+          "Keyword Research (Unlimited)",
+          "Backlink Strategy (100+ High DA Links)",
+          "Social Media Management (FB, IG, LinkedIn, TikTok, YouTube)",
+          "30+ Social Media Posts",
+          "Google & Social Media Ads (₨ 50,000+ Budget)",
+          "Content Marketing (Blogs & Articles)",
+          "Email Marketing",
+          "Weekly Performance Report",
         ],
-        price: 25000,
+        price: 10000,
       },
     ],
     portfolio: [Marketing1, Marketing2, Marketing3, Marketing4],
     portfolioDesc:
       "Creative visuals that drive engagement. Explore my digital marketing portfolio, where strategy, design, and innovation come together for impactful campaigns.",
+    thumbnail: Marketing,
   },
   {
     id: 6,
@@ -528,40 +577,41 @@ export const ServicesData: readonly Service[] = [
         title: "Starter",
         description: "Check out our starup plan",
         features: [
-          "1-10 Screens (Mobile or Web)",
-          "Wireframing & Basic UI Design",
-          "User-Friendly Layouts",
+          "Basic Video Editing (Trimming, Cutting, Merging)",
+          "Up to 2 Minutes Video",
+          "Basic Transitions & Text Overlays",
+          "Background Music Addition",
+          "Standard 1080p Quality",
           "2 Revisions",
-          "Delivery in Figma/XD",
         ],
-        price: 10000,
+        price: 5000,
       },
       {
         title: "Basic",
         description: "Check out our premium plan",
         features: [
-          "10-20 Screens (Mobile or Web)",
-          "Wireframing & UI Design",
-          "Basic Prototyping",
-          "Responsive Design",
-          "3 Revisions",
-          "Source Files Included (Figma/XD)",
+          "Professional Editing (Transitions, Color Correction)",
+          "Up to 5 Minutes Video",
+          "Motion Graphics & Effects",
+          "Subtitles & Captions",
+          "Background Music",
+          "4 Revisions",
         ],
-        price: 15000,
+        price: 20000,
       },
       {
         title: "Premium",
         description: "Check out our basic plan",
         features: [
-          "15-30 Screens (Mobile or Web)",
-          "Full UI/UX Design Process (Research, Wireframes & Final UI)",
-          "Interactive Prototype",
-          "UX Audit & User Flow Design",
-          "Responsive & Dark Mode Design",
+          "High-End Video Editing & Post-Production",
+          "Up to 15+ Minutes Video",
+          "Advanced Motion Graphics & VFX",
+          "Green Screen Editing",
+          "Multi-Camera Editing",
+          "4K Quality Export",
           "Unlimited Revisions",
-          "Delivery in Figma/XD with Assets & Style Guide",
         ],
-        price: 25000,
+        price: 50000,
       },
     ],
     portfolio: [
@@ -575,6 +625,7 @@ export const ServicesData: readonly Service[] = [
     ],
     portfolioDesc:
       "Creative visuals that tell compelling stories. Explore my video editing portfolio, where motion, effects, and innovation come together for impactful visuals.",
+    thumbnail: Editing,
   },
   {
     id: 7,
@@ -589,40 +640,50 @@ export const ServicesData: readonly Service[] = [
         title: "Starter",
         description: "Check out our starup plan",
         features: [
-          "1-10 Screens (Mobile or Web)",
-          "Wireframing & Basic UI Design",
-          "User-Friendly Layouts",
-          "2 Revisions",
-          "Delivery in Figma/XD",
+          "Up to 5 Pages Website",
+          "Responsive Design",
+          "Basic Theme Customization",
+          "Essential Plugins Installation",
+          "Contact Form Integration",
+          "SEO-Friendly Structure",
+          "Speed Optimization",
+          "1 Revision",
         ],
-        price: 10000,
+        price: 20000,
       },
       {
         title: "Basic",
         description: "Check out our premium plan",
         features: [
-          "10-20 Screens (Mobile or Web)",
-          "Wireframing & UI Design",
-          "Basic Prototyping",
-          "Responsive Design",
+          "Up to 10 Pages Website",
+          "Premium Theme Customization",
+          "WooCommerce Integration (E-commerce)",
+          "Custom Contact & Inquiry Forms",
+          "Basic SEO Optimization",
+          "Mobile & Tablet Responsive",
+          "Security & Backup Setup",
+          "Speed Optimization",
+          "Social Media Integration",
           "3 Revisions",
-          "Source Files Included (Figma/XD)",
         ],
-        price: 15000,
+        price: 60000,
       },
       {
         title: "Premium",
         description: "Check out our basic plan",
         features: [
-          "15-30 Screens (Mobile or Web)",
-          "Full UI/UX Design Process (Research, Wireframes & Final UI)",
-          "Interactive Prototype",
-          "UX Audit & User Flow Design",
-          "Responsive & Dark Mode Design",
+          "Unlimited Pages",
+          "Custom WordPress Theme Development",
+          "Advanced WooCommerce Setup (E-commerce)",
+          "Membership & Subscription Features",
+          "Multi-language Support (WPML)",
+          "Advanced SEO & Performance Optimization",
+          "Security Enhancements & Firewall Setup",
+          "Custom Plugins Development",
+          "API Integration & Automation",
           "Unlimited Revisions",
-          "Delivery in Figma/XD with Assets & Style Guide",
         ],
-        price: 25000,
+        price: 100000,
       },
     ],
     portfolio: [
@@ -635,6 +696,7 @@ export const ServicesData: readonly Service[] = [
     ],
     portfolioDesc:
       "Creative visuals that power dynamic websites. Explore my WordPress portfolio, where design, functionality, and innovation come together for seamless web experiences.",
+    thumbnail: Wordpress,
   },
 ];
 
@@ -655,5 +717,179 @@ export const SocialData = [
   {
     icon: <RiLinkedinFill />,
     url: "https://www.facebook.com/DevSphere-116816443988852/",
+  },
+];
+
+export const TeamData: TeamInterface[] = [
+  {
+    name: "Ahmad Ali",
+    position: "Founder & Director",
+    imgSrc: AhmadAli,
+    socialLinks: [
+      {
+        icon: <FaFacebookF />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <RiLinkedinFill />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <FaEnvelope />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+    ],
+  },
+  {
+    name: "Ahmad Ali",
+    position: "Founder & Director",
+    imgSrc: AhmadAli,
+    socialLinks: [
+      {
+        icon: <FaFacebookF />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <RiLinkedinFill />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <FaEnvelope />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+    ],
+  },
+  {
+    name: "Ahmad Ali",
+    position: "Founder & Director",
+    imgSrc: AhmadAli,
+    socialLinks: [
+      {
+        icon: <FaFacebookF />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <RiLinkedinFill />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <FaEnvelope />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+    ],
+  },
+  {
+    name: "Ahmad Ali",
+    position: "Founder & Director",
+    imgSrc: AhmadAli,
+    socialLinks: [
+      {
+        icon: <FaFacebookF />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <RiLinkedinFill />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <FaEnvelope />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+    ],
+  },
+  {
+    name: "Ahmad Ali",
+    position: "Founder & Director",
+    imgSrc: AhmadAli,
+    socialLinks: [
+      {
+        icon: <FaFacebookF />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <RiLinkedinFill />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <FaEnvelope />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+    ],
+  },
+  {
+    name: "Ahmad Ali",
+    position: "Founder & Director",
+    imgSrc: AhmadAli,
+    socialLinks: [
+      {
+        icon: <FaFacebookF />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <RiLinkedinFill />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <FaEnvelope />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+    ],
+  },
+  {
+    name: "Ahmad Ali",
+    position: "Founder & Director",
+    imgSrc: AhmadAli,
+    socialLinks: [
+      {
+        icon: <FaFacebookF />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <RiLinkedinFill />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <FaEnvelope />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+    ],
+  },
+  {
+    name: "Ahmad Ali",
+    position: "Founder & Director",
+    imgSrc: AhmadAli,
+    socialLinks: [
+      {
+        icon: <FaFacebookF />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <RiLinkedinFill />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <FaEnvelope />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+    ],
+  },
+  {
+    name: "Ahmad Ali",
+    position: "Founder & Director",
+    imgSrc: AhmadAli,
+    socialLinks: [
+      {
+        icon: <FaFacebookF />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <RiLinkedinFill />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+      {
+        icon: <FaEnvelope />,
+        url: "https://www.facebook.com/ahmad.ali.7319",
+      },
+    ],
   },
 ];

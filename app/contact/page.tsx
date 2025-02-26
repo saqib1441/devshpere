@@ -13,6 +13,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { ContactPageData } from "@/lib/data";
 
 const ContactPage: FC = () => {
+  const loading: boolean = false;
+
   return (
     <main className="space-y-10">
       {/* Page Header */}
@@ -95,7 +97,7 @@ const ContactPage: FC = () => {
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" placeholder="Email" />
               </div>
-              <div className="grid gap-2 sm:col-span-2 lg:col-span-1">
+              <div className="grid gap-2">
                 <Label htmlFor="subject">Subject</Label>
                 <Input id="subject" placeholder="Subject" />
               </div>

@@ -7,7 +7,7 @@ interface IPageHeader {
 
 const PageHeader: FC<IPageHeader> = ({ title, description }) => {
   return (
-    <header className="pt-20 pb-10 text-center container">
+    <header className="py-20 text-center container">
       {/* Page Title */}
       <h1 className="text-5xl font-black font-nunito text-black/90 dark:text-white/90">
         {title}

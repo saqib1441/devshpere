@@ -11,7 +11,7 @@ const PricingCard: FC<PricingPlan> = ({
   price,
 }) => {
   return (
-    <div className="flex flex-col items-center shadow-mainShadow rounded-2xl p-10 dark:shadow-none dark:bg-secondary/70">
+    <div className="flex flex-col items-center shadow-mainShadow rounded-2xl xl:p-10 p-5 dark:shadow-none dark:bg-secondary/70 w-[300px] mx-auto sm:w-auto sm:mx-0">
       <h1 className="text-2xl font-nunito font-black">{title}</h1>
       <p className="text-black/70 mb-3 dark:text-white/70">{description}</p>
       <h1 className="text-primary font-nunito font-black text-4xl flex mb-3">

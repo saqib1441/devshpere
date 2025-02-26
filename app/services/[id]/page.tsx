@@ -9,6 +9,8 @@ import PortfolioSwiper from "@/components/PortfolioSwiper";
 import Link from "next/link";
 import Testimonial from "@/components/Testimonial";
 import Quote from "@/components/Quote";
+import NotFound from "@/app/not-found";
+import Header from "@/components/Header";
 
 interface OtherServicesInterface {
   id: number;
@@ -23,45 +25,51 @@ const SingleService: FC = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    if (!id) return; // Prevent running if `id` is undefined
+    if (!id) return;
 
     const data = ServicesData.find((service) => service.id.toString() === id);
     const other = ServicesData.filter(
       (service) => service.id.toString() !== id
-    ); // Ensure correct shape
+    );
 
     setService(data || null);
     setOtherServices(other.map(({ id, name }) => ({ id, name })));
   }, [id]);
 
   if (!service) {
-    return <></>; // Show 404 if service not found
+    return <NotFound />;
   }
 
   return (
     <main className="service">
       {/* Page Header */}
-      <PageHeader title={service.name} description={service.shortDesc} />
+      <Header
+        heading={service.name}
+        description={service.shortDesc}
+        link="/contact"
+        imgSrc={service.thumbnail}
+        imgAlt={`dev-sphere-${service.name.toLowerCase()}`}
+      />
 
       {/* Description Section */}
-      <section className="container">
-        <div className="flex gap-10 items-start">
-          <div className="w-[70%]">
+      <section className="container mt-10">
+        <div className="flex gap-10 items-start flex-col lg:flex-row">
+          <div className="lg:w-[70%]">
             <h1 className="text-xl font-nunito font-black">Description</h1>
             <p className="text-black/70 dark:text-white/70">
               {service.description}
             </p>
           </div>
-          <div className="flex flex-col gap-3 shadow-mainShadow p-7 rounded-2xl w-[30%] dark:shadow-none dark:bg-secondary/70">
+          <div className="flex flex-col gap-3 shadow-mainShadow p-7 rounded-2xl w-full lg:w-[30%] dark:shadow-none dark:bg-secondary/70">
             <h1 className="text-xl font-nunito font-black">More Services</h1>
             <div className="w-full flex flex-col gap-2">
               {otherServices?.map(({ id, name }, index) => (
                 <Link
                   href={`/services/${id}`}
                   key={index}
-                  className="text-gray-600 dark:text-gray-400 border-b last:border-none pb-1 hover:text-primary transition-all duration-300 dark:border-white/10"
+                  className="text-gray-600 dark:text-gray-400 border-b last:border-none pb-1 hover:text-primary transition-all duration-300 dark:border-white/10 dark:hover:text-primary"
                 >
-                  - {name}
+                  {name}
                 </Link>
               ))}
             </div>
@@ -93,7 +101,7 @@ const SingleService: FC = () => {
 
         {/* Portfolio Section */}
         {service.portfolio && service.portfolio.length > 0 && (
-          <div className="my-20">
+          <div className="my-20" id="portfolio">
             <div className="text-center mb-10">
               <h1 className="text-3xl font-nunito font-black">
                 {service.name} Portfolio

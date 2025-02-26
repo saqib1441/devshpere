@@ -51,7 +51,13 @@ const Navbar: FC = () => {
               href={path}
               key={index}
               className={`${
-                pathname === path && "text-primary"
+                path === "/"
+                  ? pathname === "/"
+                    ? "text-primary"
+                    : ""
+                  : pathname === path || pathname.startsWith(`${path}/`)
+                  ? "text-primary"
+                  : ""
               } hover:text-primary transition-all duration-300`}
             >
               {name}
