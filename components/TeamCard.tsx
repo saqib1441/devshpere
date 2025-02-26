@@ -14,7 +14,7 @@ const TeamCard: FC<TeamInterface> = ({
       <div>
         <Image src={imgSrc} alt={`dev-sphere-${name}`} />
       </div>
-      <div className="text-center mt-3 mb-5">
+      <div className="text-center mt-3 mb-7">
         <h1 className="text-2xl font-nunito font-black">{name}</h1>
         <p className="dark:text-white/70 mb-2">{position}</p>
         <div className="flex justify-center gap-3">
