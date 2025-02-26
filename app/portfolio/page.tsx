@@ -6,7 +6,6 @@ import { ServicesData } from "@/lib/data";
 import { FC } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Services from "@/components/Services";
 import Quote from "@/components/Quote";
 import WhyUs from "@/components/WhyUs";
 import Clients from "@/components/Clients";

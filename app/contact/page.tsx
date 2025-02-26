@@ -13,8 +13,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { ContactPageData } from "@/lib/data";
 
 const ContactPage: FC = () => {
-  const loading: boolean = false;
-
   return (
     <main className="space-y-10">
       {/* Page Header */}

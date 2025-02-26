@@ -3,7 +3,6 @@
 import { FC, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { PricingPlan, ServicesData, Service } from "@/lib/data";
-import PageHeader from "@/components/PageHeader";
 import PricingCard from "@/components/PricingCard";
 import PortfolioSwiper from "@/components/PortfolioSwiper";
 import Link from "next/link";
